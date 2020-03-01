@@ -3,8 +3,11 @@
     <div class="card" v-if="isVisible">
         <header class="card-header">
             <p class="card-header-title">
-                {{ name }}&nbsp;<span class="tag is-danger" v-if="required">Kötelező</span>
+                {{ name }}
             </p>
+            <div class="card-header-icon" v-if="required && !isDone">
+                <span class="tag is-danger">!</span>
+            </div>
             <a v-on:click="toggleDescription(this)" class="card-header-icon" aria-label="more options">
                 <span class="icon">
                     <i v-bind:class="{ 'fa-angle-down': !isOpened, 'fa-angle-up': isOpened }" @click="toggleDescription" class="fas"  aria-hidden="true"></i>
@@ -71,8 +74,11 @@ export default {
         }
     },
     methods: {
+        setDescriptionVisibility(show) {
+            this.isOpened = show;
+        },
         toggleDescription() {
-            this.isOpened = !this.isOpened;
+            this.setDescriptionVisibility(!this.isOpened);
         },
         toggleDoneAttr() {
             this.isDone = !this.isDone;
@@ -84,9 +90,5 @@ export default {
 <style scoped>
 .card {
     margin-bottom: 15px;
-}
-
-.tag.is-danger {
-    margin-left: 10px;
 }
 </style>

@@ -7,14 +7,14 @@
                     <button v-on:click="toggleDoneItems" v-bind:class="{ 'is-danger': !hideIfItemIsDone, 'is-success': hideIfItemIsDone }"  class="button is-small">{{ btnHideDoneItemsText }}</button>
                 </div>
             </div>
-            <!--div class="level-right">
+            <div class="level-right">
                 <div class="level-item">
-                    <button class="button is-dark is-small">Mind összecsuk</button>
+                    <button v-on:click="toggleDescriptions" v-bind:class="{ 'is-info': !showDescriptions, 'is-dark': showDescriptions }" class="button is-small">{{ btnShowDescriptionsText }}</button>
                 </div>
-            </div-->
+            </div>
         </div>
         <div class="columns is-multiline">
-            <Item v-for="item in items" :key="item" v-bind="item" v-bind:hideIfDone="hideIfItemIsDone"></Item>
+            <Item v-for="item in items" :key="item" v-bind="item" v-bind:hideIfDone="hideIfItemIsDone" ref="childComponent"></Item>
         </div>
     </div>
 </template>
@@ -32,7 +32,8 @@ export default {
     ],
     data() {
         return {
-            hideIfItemIsDone: false
+            hideIfItemIsDone: false,
+            showDescriptions: false
         }
     },
     computed: {
@@ -42,11 +43,26 @@ export default {
             }
 
             return "Kész elemek elrejtése";
+        },
+        btnShowDescriptionsText() {
+            if (this.showDescriptions) {
+                return "Mind összecsuk";
+            }
+            
+            return "Mind kinyit";
         }
     },
     methods: {
         toggleDoneItems() {
-            this.hideIfItemIsDone = this.hideIfItemIsDone ? false : true;
+            this.hideIfItemIsDone = !this.hideIfItemIsDone;
+        },
+        toggleDescriptions() {
+            this.showDescriptions = !this.showDescriptions;
+        }
+    },
+    watch: {
+        showDescriptions(newValue) {
+            this.$refs.childComponent.forEach(function (el) {el.setDescriptionVisibility(newValue)});
         }
     }
 }
