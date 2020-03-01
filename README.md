@@ -1,4 +1,4 @@
-# hello-world
+# Erdely 2020 Packing Checklist
 
 ## Project setup
 ```
