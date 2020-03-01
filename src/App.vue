@@ -1,28 +1,47 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <BaseData v-bind:travel="travel"></BaseData>
+    <ItemsList v-bind:items="items"></ItemsList>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BaseData from './components/travel/BaseData.vue'
+import ItemsList from './components/items/ItemsList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    BaseData,
+    ItemsList
+  },
+  data() {
+    return {
+      travel: {},
+      items: {}
+    }
+  },
+  methods: {
+    initTravelBaseData() {
+      this.$axios.get('/data/travel.json')
+        .then(response => {
+          this.travel = JSON.parse(JSON.stringify(response.data))
+        });
+    },
+
+    initItemsData() {
+      this.$axios.get('/data/items.json')
+        .then(response => {
+          this.items = JSON.parse(JSON.stringify(response.data))
+        });
+    }
+  },
+  created: function() {
+      this.initTravelBaseData();
+      this.initItemsData();
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
