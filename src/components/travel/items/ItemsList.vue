@@ -13,7 +13,9 @@
                 </div>
             </div-->
         </div>
-        <Item v-for="item in items" :key="item" v-bind="item" v-bind:hideIfDone="hideIfItemIsDone"></Item>
+        <div class="columns is-multiline">
+            <Item v-for="item in items" :key="item" v-bind="item" v-bind:hideIfDone="hideIfItemIsDone"></Item>
+        </div>
     </div>
 </template>
 

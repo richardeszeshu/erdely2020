@@ -1,8 +1,9 @@
 <template>
+    <div class="column is-3">
     <div class="card" v-if="isVisible">
         <header class="card-header">
             <p class="card-header-title">
-                {{ name }}
+                {{ name }}&nbsp;<span class="tag is-danger" v-if="required">Kötelező</span>
             </p>
             <a v-on:click="toggleDescription(this)" class="card-header-icon" aria-label="more options">
                 <span class="icon">
@@ -30,6 +31,7 @@
                 </label>
             </div>
         </footer>
+    </div>
     </div>
 </template>
 
@@ -82,5 +84,9 @@ export default {
 <style scoped>
 .card {
     margin-bottom: 15px;
+}
+
+.tag.is-danger {
+    margin-left: 10px;
 }
 </style>

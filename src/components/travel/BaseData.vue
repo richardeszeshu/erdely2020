@@ -17,7 +17,7 @@
                 </tr>
                 <tr>
                     <th>Távolság:</th>
-                    <td>{{ travel.distance }}</td>
+                    <td>{{ travel.distance }} km</td>
                 </tr>
                 <tr>
                     <th>Menetidő:</th>
