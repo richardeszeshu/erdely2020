@@ -7,11 +7,11 @@
                     <button v-on:click="toggleDoneItems" v-bind:class="{ 'is-danger': !hideIfItemIsDone, 'is-success': hideIfItemIsDone }"  class="button is-small">{{ btnHideDoneItemsText }}</button>
                 </div>
             </div>
-            <div class="level-right">
+            <!--div class="level-right">
                 <div class="level-item">
                     <button class="button is-dark is-small">Mind összecsuk</button>
                 </div>
-            </div>
+            </div-->
         </div>
         <Item v-for="item in items" :key="item" v-bind="item" v-bind:hideIfDone="hideIfItemIsDone"></Item>
     </div>

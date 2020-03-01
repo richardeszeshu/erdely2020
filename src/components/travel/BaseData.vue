@@ -13,7 +13,7 @@
                 </tr>
                 <tr>
                     <th>Helszín:</th>
-                    <td>{{ travel.location }}</td>
+                    <td v-html="travel.location"></td>
                 </tr>
                 <tr>
                     <th>Távolság:</th>

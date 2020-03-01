@@ -7,7 +7,7 @@
 
 <script>
 import BaseData from './components/travel/BaseData.vue'
-import ItemsList from './components/items/ItemsList.vue'
+import ItemsList from './components/travel/items/ItemsList.vue'
 
 export default {
   name: 'App',

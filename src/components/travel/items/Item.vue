@@ -6,16 +6,16 @@
             </p>
             <a v-on:click="toggleDescription(this)" class="card-header-icon" aria-label="more options">
                 <span class="icon">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    <i v-bind:class="{ 'fa-angle-down': !isOpened, 'fa-angle-up': isOpened }" @click="toggleDescription" class="fas"  aria-hidden="true"></i>
                 </span>
             </a>
         </header>
-        <div class="card-content">
+        <div class="card-content" v-if="isOpened">
             <div class="content">
                 {{ description }}
             </div>
         </div>
-        <footer class="card-footer has-text-centered">
+        <footer class="card-footer has-text-centered" v-if="isOpened">
             <div class="card-footer-item">
                 <span class="tag is-danger" v-if="required">Kötelező</span>
                 <span class="tag is-dark" v-else>Opcionális</span>
@@ -25,7 +25,7 @@
             </div>
             <div class="card-footer-item">
                 <label class="checkbox">
-                    <input type="checkbox" v-on:change="toggleDoneAttr">
+                    <input type="checkbox" v-on:change="toggleDoneAttr" v-bind:checked="isDone">
                     Kész
                 </label>
             </div>
@@ -37,45 +37,43 @@
 export default {
     name: 'Item',
     props: [
+        "uuid",
         "name",
         "description",
         "required",
         "type",
-        "hideIfDone"
+        "hideIfDone",
     ],
+    data() {
+        return {
+            isDone: false,
+            isOpened: false
+        }
+    },
     computed: {
-        id() {
-            var hash = 0, i, chr, len;
-            if (this.name.length === 0) return hash;
-            for (i = 0, len = this.name.length; i < len; i++) {
-                chr   = this.name.charCodeAt(i);
-                hash  = ((hash << 5) - hash) + chr;
-                hash |= 0; // Convert to 32bit integer
-            }
-            return hash;
-        },
-        isDone: {
-            get() {
-                return localStorage.getItem(this.id) ? true : false
-            },
-
-            set(value) {
-                localStorage.setItem(this.id, value);
-            }
-        },
         isVisible() {
             if (this.hideIfDone) {
-                return this.isDone ? false : true;
+                return !this.isDone;
             }
             return true;
         }
     },
+    mounted() {
+        if (localStorage.getItem(this.uuid) === "true") {
+            this.isDone = true;
+        }
+    },
+    watch: {
+        isDone(newValue) {
+            localStorage.setItem(this.uuid, newValue);
+        }
+    },
     methods: {
         toggleDescription() {
-            console.log('clicked:');
+            this.isOpened = !this.isOpened;
         },
         toggleDoneAttr() {
-            this.isDone = this.isDone === true ? false : true;
+            this.isDone = !this.isDone;
         }
     }
 }

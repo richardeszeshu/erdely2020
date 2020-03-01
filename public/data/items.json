@@ -1,179 +1,209 @@
 [
     {
+        "uuid": "d9274420-12f4-4037-88be-a70d3e162a14",
         "name": "Személyi igazolvány",
         "description": "Legyen ÉRVÉNYES az utazás ideje alatt!",
         "type": "Irat",
         "required": true
     },
     {
+        "uuid": "68fbeac3-819a-4ff2-8b19-4589426488ec",
         "name": "Lakcímkártya",
         "description": "",
         "type": "Irat",
         "required": true
     },
     {
+        "uuid": "8e132984-6b5e-4c6a-ab51-6baa626b3582",
         "name": "Jogosítvány",
         "description": "Aki vezetni fog, annál kell hogy legyen érvényes jogosítvány",
         "type": "Irat",
         "required": true
     },
     {
+        "uuid": "9be5434c-b592-480b-b46b-ac6debb83f89",
         "name": "Szerszámok",
         "description": "Autók útszéli szervízéhez legyenek meg az eszközök.",
         "type": "Eszköz",
         "required": true
     },
     {
+        "uuid": "37e9744f-3072-4254-905f-b0f174d81403",
         "name": "Autós elsősegély doboz",
         "description": "Romániában kötelező! Ellenőrizendő a szav. idő!",
         "type": "Eszköz",
         "required": true
     },
     {
+        "uuid": "d1af825b-ec3a-4def-b58e-43b8c96a5d35",
         "name": "Tűzoltó készülék",
         "description": "Romániában kötelező!",
         "type": "Eszköz",
         "required": true
     },
     {
+        "uuid": "17c8f748-1fdf-4e97-9de9-335c74b6334e",
         "name": "Elakadásjelző háromszög",
         "description": "Romániában kötelező!",
         "type": "Eszköz",
         "required": true
     },
     {
+        "uuid": "87027a5b-1985-4304-970f-b8d764083a66",
         "name": "Fényvisszaverő mellény",
         "description": "Legyen több minden kocsiban! Tudjunk biztonságban kiszállni a járműből.",
         "type": "Eszköz",
         "required": true
     },
     {
+        "uuid": "7cf0bec0-d180-4200-b96d-f8b0775ffa3f",
         "name": "Nyári szabadidő ruha",
         "description": "",
         "type": "Ruha",
         "required": true
     },
     {
+        "uuid": "8c42b114-2851-4caf-8114-de6572169201",
         "name": "Utcai cipő",
         "description": "",
         "type": "Ruha",
         "required": true
     },
     {
+        "uuid": "f6222c8f-beb3-4660-916e-67dc2fb82972",
         "name": "Melegebb felsőruházat",
         "description": "Este hűvösebb lehet a magasság miatt, tudj rétegesen öltözködni",
         "type": "Ruha",
         "required": true
     },
     {
+        "uuid": "cea38568-40cc-4fba-9f9c-1e4cd17b3b24",
         "name": "Törölköző",
         "description": "Bizonytalan, hogy lesz-e (egyáltalán, vagy elég) törölköző. Az a biztos, ha mindenki hoz magával.",
         "type": "Eszköz",
         "required": true
     },
     {
+        "uuid": "075d4d7e-0694-46de-b393-7cc56bb2cfd4",
         "name": "Európai egészségbiztosítási kártya",
         "description": "Ha ne adj Isten valaki megbetegszik, megsérül, e nélkül fizetnie kell az orvosi ellátást, ami 10.000-es nagyságtól 100.000-es nagyságig is terjedhet. Igénylés: OEP kirendeltségeken",
         "type": "Irat",
         "required": false
     },
     {
+        "uuid": "0d6a4733-7ab1-402f-b00a-727a411fee47",
         "name": "Zseblámpa",
         "description": "Minél több van, annál jobb. Számos esetben jól jöhet, ha látunk az út szélén, ha elmegy az áram, stb. stb.",
         "type": "Eszköz",
         "required": false
     },
     {
+        "uuid": "7a3d0599-2483-40aa-b6d4-e955bcd5d5d6",
         "name": "Hosszabító",
         "description": "",
         "type": "Eszköz",
         "required": false
     },
     {
+        "uuid": "118a2e03-5e70-4061-a3c7-06b38a857e7d",
         "name": "Elektromos elosztó",
         "description": "",
         "type": "Eszköz",
         "required": false
     },
     {
+        "uuid": "d87da4ce-c2fe-4b9c-a8e6-d720382da41b",
         "name": "Utasbiztosítás",
         "description": "Kb. 5000 Ft-os összegről van szó az ott tartózkodás idejére, gépjármü asszisztenciával, mindennel. Ha bármi váratlan történik, elég nagy összeggekkel tudnak segíteni. További infó: netrisk.hu",
         "type": "Szolgáltatás",
         "required": false
     },
     {
+        "uuid": "b41eb287-9755-41de-9df2-60c0e9c84cba",
         "name": "Pokróc",
         "description": "Betakarózni, ráülni, ... Egy pokróc mindig jól jön.",
         "type": "Eszköz",
         "required": false
     },
     {
+        "uuid": "bad54179-4712-4416-9abc-2b5678331629",
         "name": "Fürdőruha",
         "description": "Aki szeretne a szabadstrandon vagy a parajdi sóbánya sós fürdőjében fürödni, az hozzon",
         "type": "Ruha",
         "required": false
     },
     {
+        "uuid": "99e6863b-71a6-4124-bd11-212ab984f693",
         "name": "Zárt, bokát fixen tartó, vastag talpú cipő",
         "description": "Túrázáshoz. Akkor is hozz, ha bizonytalan vagy, a kocsiban elfér és bárhol le lehet cserélni az utcai cipődet. Ha vízállóság mellett vacilálsz, akkor igen, legyen vízálló.",
         "type": "Ruha",
         "required": false
     },
     {
+        "uuid": "61ba0aac-e4df-4ff0-bf9a-571457ef68bb",
         "name": "Horgászfelszerelés",
         "description": "A környéken van lehetőség horgászni, ha erre van igényed akkor dobd be a felszerelésed.",
         "type": "Eszköz",
         "required": false
     },
     {
+        "uuid": "e3d3f971-a22a-4aaa-9549-fae5e214f7d5",
         "name": "Autó assistance",
         "description": "Általában utasbiztosítás mellé köthető, napidíjas. Érdemes elgondolkozni rajta, nagy segítséget nyújthat ha van kitől autómentést kérni nem tízezres költséggel. Nyilván itt az ár szétosztandó a résztvevők között.",
         "type": "Szolgáltatás",
         "required": false
     },
     {
+        "uuid": "eebe6a5c-8f1b-4e95-9948-081538149fe4",
         "name": "Gyógyszerek",
         "description": "Fájdalomcsillapító, hasfogó, laktózintolerancia elleni gyógyszer, stb.",
         "type": "Eszköz",
         "required": false
     },
     {
+        "uuid": "9c94550d-2f67-42f0-aa35-e37e850c5513",
         "name": "Molbiltelefon töltő",
         "description": "Nem kötelező, csak ha szeretnéd a mobilod tölteni",
         "type": "Eszköz",
         "required": false
     },
     {
+        "uuid": "cb0b3dff-d9c0-4e44-a387-0f19b1a2261b",
         "name": "WC-papír",
         "description": "Út közben jól jöhet pár guriga",
         "type": "Eszköz",
         "required": false
     },
     {
+        "uuid": "8f7a2b78-f0c6-499f-8038-ac40f71df5d0",
         "name": "Papírzsepkendő",
         "description": "",
         "type": "Eszköz",
         "required": false
     },
     {
+        "uuid": "c7da6739-dd8a-47d1-a344-fb7891c8399e",
         "name": "Tusfürdő",
         "description": "Helyben is vásárolható",
         "type": "Eszköz",
         "required": false
     },
     {
+        "uuid": "dca59a64-2f7e-499c-a0d0-4cf93ce0d7f5",
         "name": "Fogkefe, fogkrém",
         "description": "Helyben is vásárolható",
         "type": "Eszköz",
         "required": false
     },
     {
+        "uuid": "cac48332-bfce-4db1-a986-959b7fb7c9a7",
         "name": "Külső akkumulátor telefonhoz",
         "description": "Ha van, akkor jó ha hozod. Túrához, hosszúra nyúlt napokhoz, fotózás és navigáció meríti rendesen az akksit.",
         "type": "Eszköz",
         "required": false
     },
     {
+        "uuid": "59bdf39e-5067-4d3d-959b-65bfc94bd5a7",
         "name": "Hordozható hangszóró (Martina)",
         "description": "...de légyszi!",
         "type": "Eszköz",
